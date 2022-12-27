@@ -7,12 +7,28 @@
     margin: auto;
 }
 
+.responsive img{
+    width: 600px;
+ 
+  height: 500px;
+}
+.mobiledisable{
+    display: none;
+}
 @media only screen and (max-width: 1000px) {
     .player{
         width: 90%;
         display: flex;
         justify-content: center;
         margin-left: 5%;
+    }
+    .responsive img{
+        width: 50%;
+     
+      height: 50%;
+    }
+    .mobiledisable{
+        display: none;
     }
     
   
