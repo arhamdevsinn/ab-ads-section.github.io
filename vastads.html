@@ -11,7 +11,34 @@
     
 	<div class="d-flex justify-content-center mt-5 player">  <video id="video-id"><source src="https://storage.googleapis.com/interactive-media-ads/media/android.mp4" type="video/mp4" /></div>
       
-   
+    <script>
+    
+       function currentClick(){
+          console.log("func")
+      fetch( "http://localhost:5000/ads/getStatus/0be7fe257cccf5358576ef6bde8e536b", {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(text => console.log(text))}
+    function adClick(){
+      console.log("click")
+      $.ajax(
+            {url:"http://localhost:5000/ads/updateStatus/0be7fe257cccf5358576ef6bde8e536b", 
+            async: false, 
+            type: "POST",
+            data:{"clicks": 1, "revenue": 0.5},
+            success: function(result){
+                // alert("hooli");
+            }});
+    
+    
+    
+    }
+    
+    </script>
   
   
    <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
